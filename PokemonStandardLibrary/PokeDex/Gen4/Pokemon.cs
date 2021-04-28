@@ -156,6 +156,7 @@ namespace PokemonStandardLibrary.PokeDex.Gen4
             public ShinyType Shiny { get; internal set; }
             public uint HiddenPower { get; internal set; }
             public PokeType HiddenPowerType { get; internal set; }
+
             public ShinyType GetShinyType(uint TSV)
             {
                 var psv = (PID >> 16) ^ (PID & 0xFFFF);
@@ -170,10 +171,11 @@ namespace PokemonStandardLibrary.PokeDex.Gen4
                 else Shiny = ShinyType.NotShiny;
                 return this;
             }
-            internal Individual(Species species, uint pid, uint[] ivs, uint lv)
+            internal protected Individual(Species species, uint pid, uint[] ivs, uint lv)
             {
                 Name = species.Name;
                 Form = species.FormName;
+                Lv = lv;
                 PID = pid;
                 IVs = ivs;
                 Nature = (Nature)(PID % 25);

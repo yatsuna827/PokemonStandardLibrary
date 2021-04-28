@@ -2,6 +2,10 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>yatsuna_827</Authors>
+    <Company>yatsuna_827</Company>
+    <Description>ポケモンの種族データやタイプ、性格などの基礎的なデータを提供するライブラリです。</Description>
   </PropertyGroup>
 
 </Project>

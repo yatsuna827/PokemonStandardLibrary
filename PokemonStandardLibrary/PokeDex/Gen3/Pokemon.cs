@@ -5,7 +5,7 @@ using PokemonStandardLibrary.CommonExtension;
 
 namespace PokemonStandardLibrary.PokeDex.Gen3
 {
-    public class Pokemon
+    public static class Pokemon
     {
         public class Species
         {
@@ -190,6 +190,7 @@ namespace PokemonStandardLibrary.PokeDex.Gen3
             internal protected Individual(Species species, uint pid, uint[] ivs, uint lv)
             {
                 Name = species.Name;
+                Lv = lv;
                 Form = species.FormName;
                 PID = pid;
                 IVs = ivs;
@@ -210,23 +211,27 @@ namespace PokemonStandardLibrary.PokeDex.Gen3
         private static readonly Dictionary<string, Species> uniqueDex;
         private static readonly Dictionary<string, Species> dexDictionary;
 
-        private Pokemon() { }
-        public static Species GetPokemon(string Name)
-        {
-            if (!uniqueDex.ContainsKey(Name)) throw new Exception($"{Name}は登録されていません");
-            return uniqueDex[Name];
-        }
-        public static Species GetPokemon(string Name, string Form)
-        {
-            if (!dexDictionary.ContainsKey(Name + Form)) throw new Exception($"{Name + Form}は登録されていません");
-            return dexDictionary[Name + Form];
-        }
-        public static IReadOnlyList<Species> GetAllForms(string Name)
-        {
-            return formDex[Name].ToArray();
-        }
-        public static IReadOnlyList<Species> GetUniquePokemonList() => uniqueList.Where(_ => _.Name != "Dummy").ToArray();
-        public static IReadOnlyList<Species> GetAllPokemonList() => dexData.Where(_ => _.Name != "Dummy").ToArray();
+        public static Species GetPokemon(string name) 
+            => uniqueDex.ContainsKey(name) ? uniqueDex[name] : throw new Exception($"{name}は登録されていません");
+
+        public static Species GetPokemon(string name, string form) 
+            => dexDictionary.ContainsKey(name + form) ? dexDictionary[name + form] : throw new Exception($"{name + form}は登録されていません");
+
+        public static bool TryGetPokemon(string name, out Species pokemon) 
+            => uniqueDex.TryGetValue(name, out pokemon);
+
+        public static bool TryGetPokemon(string name, string form, out Species pokemon)
+            => dexDictionary.TryGetValue(name + form, out pokemon);
+
+        public static IReadOnlyList<Species> GetAllForms(string name) 
+            => formDex[name].ToArray();
+
+        public static IReadOnlyList<Species> GetUniquePokemonList() 
+            => uniqueList.Where(_ => _.Name != "Dummy").ToArray();
+
+        public static IReadOnlyList<Species> GetAllPokemonList() 
+            => dexData.Where(_ => _.Name != "Dummy").ToArray();
+
         static Pokemon()
         {
             dexData = new List<Species>();
@@ -439,7 +444,34 @@ namespace PokemonStandardLibrary.PokeDex.Gen3
             dexData.Add(new Species(198, "ヤミカラス", "", new uint[] { 60, 85, 42, 85, 42, 91 }, (PokeType.Dark, PokeType.Flying), new string[] { "ふみん", "ふみん" }, GenderRatio.M1F1));
             dexData.Add(new Species(199, "ヤドキング", "", new uint[] { 95, 75, 80, 100, 110, 30 }, (PokeType.Water, PokeType.Psychic), new string[] { "どんかん", "マイペース" }, GenderRatio.M1F1));
             dexData.Add(new Species(200, "ムウマ", "", new uint[] { 60, 60, 60, 85, 85, 85 }, (PokeType.Ghost, PokeType.Non), new string[] { "ふゆう", "ふゆう" }, GenderRatio.M1F1));
-            dexData.Add(new Species(201, "アンノーン", "", new uint[] { 48, 72, 48, 72, 48, 48 }, (PokeType.Psychic, PokeType.Non), new string[] { "ふゆう", "ふゆう" }, GenderRatio.Genderless));
+            dexData.Add(new AnotherForm(201, "アンノーン", "A", new uint[] { 48, 72, 48, 72, 48, 48 }, (PokeType.Psychic, PokeType.Non), new string[] { "ふゆう", "ふゆう" }, GenderRatio.Genderless));
+            dexData.Add(new AnotherForm(201, "アンノーン", "B", new uint[] { 48, 72, 48, 72, 48, 48 }, (PokeType.Psychic, PokeType.Non), new string[] { "ふゆう", "ふゆう" }, GenderRatio.Genderless));
+            dexData.Add(new AnotherForm(201, "アンノーン", "C", new uint[] { 48, 72, 48, 72, 48, 48 }, (PokeType.Psychic, PokeType.Non), new string[] { "ふゆう", "ふゆう" }, GenderRatio.Genderless));
+            dexData.Add(new AnotherForm(201, "アンノーン", "D", new uint[] { 48, 72, 48, 72, 48, 48 }, (PokeType.Psychic, PokeType.Non), new string[] { "ふゆう", "ふゆう" }, GenderRatio.Genderless));
+            dexData.Add(new AnotherForm(201, "アンノーン", "E", new uint[] { 48, 72, 48, 72, 48, 48 }, (PokeType.Psychic, PokeType.Non), new string[] { "ふゆう", "ふゆう" }, GenderRatio.Genderless));
+            dexData.Add(new AnotherForm(201, "アンノーン", "F", new uint[] { 48, 72, 48, 72, 48, 48 }, (PokeType.Psychic, PokeType.Non), new string[] { "ふゆう", "ふゆう" }, GenderRatio.Genderless));
+            dexData.Add(new AnotherForm(201, "アンノーン", "G", new uint[] { 48, 72, 48, 72, 48, 48 }, (PokeType.Psychic, PokeType.Non), new string[] { "ふゆう", "ふゆう" }, GenderRatio.Genderless));
+            dexData.Add(new AnotherForm(201, "アンノーン", "H", new uint[] { 48, 72, 48, 72, 48, 48 }, (PokeType.Psychic, PokeType.Non), new string[] { "ふゆう", "ふゆう" }, GenderRatio.Genderless));
+            dexData.Add(new AnotherForm(201, "アンノーン", "I", new uint[] { 48, 72, 48, 72, 48, 48 }, (PokeType.Psychic, PokeType.Non), new string[] { "ふゆう", "ふゆう" }, GenderRatio.Genderless));
+            dexData.Add(new AnotherForm(201, "アンノーン", "J", new uint[] { 48, 72, 48, 72, 48, 48 }, (PokeType.Psychic, PokeType.Non), new string[] { "ふゆう", "ふゆう" }, GenderRatio.Genderless));
+            dexData.Add(new AnotherForm(201, "アンノーン", "K", new uint[] { 48, 72, 48, 72, 48, 48 }, (PokeType.Psychic, PokeType.Non), new string[] { "ふゆう", "ふゆう" }, GenderRatio.Genderless));
+            dexData.Add(new AnotherForm(201, "アンノーン", "L", new uint[] { 48, 72, 48, 72, 48, 48 }, (PokeType.Psychic, PokeType.Non), new string[] { "ふゆう", "ふゆう" }, GenderRatio.Genderless));
+            dexData.Add(new AnotherForm(201, "アンノーン", "M", new uint[] { 48, 72, 48, 72, 48, 48 }, (PokeType.Psychic, PokeType.Non), new string[] { "ふゆう", "ふゆう" }, GenderRatio.Genderless));
+            dexData.Add(new AnotherForm(201, "アンノーン", "N", new uint[] { 48, 72, 48, 72, 48, 48 }, (PokeType.Psychic, PokeType.Non), new string[] { "ふゆう", "ふゆう" }, GenderRatio.Genderless));
+            dexData.Add(new AnotherForm(201, "アンノーン", "O", new uint[] { 48, 72, 48, 72, 48, 48 }, (PokeType.Psychic, PokeType.Non), new string[] { "ふゆう", "ふゆう" }, GenderRatio.Genderless));
+            dexData.Add(new AnotherForm(201, "アンノーン", "P", new uint[] { 48, 72, 48, 72, 48, 48 }, (PokeType.Psychic, PokeType.Non), new string[] { "ふゆう", "ふゆう" }, GenderRatio.Genderless));
+            dexData.Add(new AnotherForm(201, "アンノーン", "Q", new uint[] { 48, 72, 48, 72, 48, 48 }, (PokeType.Psychic, PokeType.Non), new string[] { "ふゆう", "ふゆう" }, GenderRatio.Genderless));
+            dexData.Add(new AnotherForm(201, "アンノーン", "R", new uint[] { 48, 72, 48, 72, 48, 48 }, (PokeType.Psychic, PokeType.Non), new string[] { "ふゆう", "ふゆう" }, GenderRatio.Genderless));
+            dexData.Add(new AnotherForm(201, "アンノーン", "S", new uint[] { 48, 72, 48, 72, 48, 48 }, (PokeType.Psychic, PokeType.Non), new string[] { "ふゆう", "ふゆう" }, GenderRatio.Genderless));
+            dexData.Add(new AnotherForm(201, "アンノーン", "T", new uint[] { 48, 72, 48, 72, 48, 48 }, (PokeType.Psychic, PokeType.Non), new string[] { "ふゆう", "ふゆう" }, GenderRatio.Genderless));
+            dexData.Add(new AnotherForm(201, "アンノーン", "U", new uint[] { 48, 72, 48, 72, 48, 48 }, (PokeType.Psychic, PokeType.Non), new string[] { "ふゆう", "ふゆう" }, GenderRatio.Genderless));
+            dexData.Add(new AnotherForm(201, "アンノーン", "V", new uint[] { 48, 72, 48, 72, 48, 48 }, (PokeType.Psychic, PokeType.Non), new string[] { "ふゆう", "ふゆう" }, GenderRatio.Genderless));
+            dexData.Add(new AnotherForm(201, "アンノーン", "W", new uint[] { 48, 72, 48, 72, 48, 48 }, (PokeType.Psychic, PokeType.Non), new string[] { "ふゆう", "ふゆう" }, GenderRatio.Genderless));
+            dexData.Add(new AnotherForm(201, "アンノーン", "X", new uint[] { 48, 72, 48, 72, 48, 48 }, (PokeType.Psychic, PokeType.Non), new string[] { "ふゆう", "ふゆう" }, GenderRatio.Genderless));
+            dexData.Add(new AnotherForm(201, "アンノーン", "Y", new uint[] { 48, 72, 48, 72, 48, 48 }, (PokeType.Psychic, PokeType.Non), new string[] { "ふゆう", "ふゆう" }, GenderRatio.Genderless));
+            dexData.Add(new AnotherForm(201, "アンノーン", "Z", new uint[] { 48, 72, 48, 72, 48, 48 }, (PokeType.Psychic, PokeType.Non), new string[] { "ふゆう", "ふゆう" }, GenderRatio.Genderless));
+            dexData.Add(new AnotherForm(201, "アンノーン", "!", new uint[] { 48, 72, 48, 72, 48, 48 }, (PokeType.Psychic, PokeType.Non), new string[] { "ふゆう", "ふゆう" }, GenderRatio.Genderless));
+            dexData.Add(new AnotherForm(201, "アンノーン", "?", new uint[] { 48, 72, 48, 72, 48, 48 }, (PokeType.Psychic, PokeType.Non), new string[] { "ふゆう", "ふゆう" }, GenderRatio.Genderless));
             dexData.Add(new Species(202, "ソーナンス", "", new uint[] { 190, 33, 58, 33, 58, 33 }, (PokeType.Psychic, PokeType.Non), new string[] { "かげふみ", "かげふみ" }, GenderRatio.M1F1));
             dexData.Add(new Species(203, "キリンリキ", "", new uint[] { 70, 80, 65, 90, 65, 85 }, (PokeType.Normal, PokeType.Psychic), new string[] { "せいしんりょく", "はやおき" }, GenderRatio.M1F1));
             dexData.Add(new Species(204, "クヌギダマ", "", new uint[] { 50, 65, 90, 35, 35, 15 }, (PokeType.Bug, PokeType.Non), new string[] { "がんじょう", "がんじょう" }, GenderRatio.M1F1));

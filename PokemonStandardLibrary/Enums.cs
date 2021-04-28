@@ -150,6 +150,7 @@ namespace PokemonStandardLibrary.CommonExtension
 
         public static string ToJapanese(this Nature nature) => Nature_JP[(int)nature];
         public static double[] ToMagnifications(this Nature nature)=> Magnifications[(int)nature].ToArray();
+        public static bool IsUncorrected(this Nature nature) => (uint)nature / 5 == (uint)nature % 5;
 
         public static string ToSymbol(this ShinyType shinyType) => shinySymbol[(int)shinyType];
         public static bool IsShiny(this ShinyType shinyType) => !(shinyType == ShinyType.NotShiny);
