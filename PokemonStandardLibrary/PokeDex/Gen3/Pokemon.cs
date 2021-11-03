@@ -479,8 +479,8 @@ namespace PokemonStandardLibrary.PokeDex.Gen3
             dexData.Add(new Species(206, "ノコッチ", "", new uint[] { 100, 70, 70, 65, 65, 45 }, (PokeType.Normal, PokeType.Non), new string[] { "てんのめぐみ", "にげあし" }, GenderRatio.M1F1));
             dexData.Add(new Species(207, "グライガー", "", new uint[] { 65, 75, 105, 35, 65, 85 }, (PokeType.Ground, PokeType.Flying), new string[] { "かいりきバサミ", "すながくれ" }, GenderRatio.M1F1));
             dexData.Add(new Species(208, "ハガネール", "", new uint[] { 75, 85, 200, 55, 65, 30 }, (PokeType.Steel, PokeType.Ground), new string[] { "いしあたま", "がんじょう" }, GenderRatio.M1F1));
-            dexData.Add(new Species(209, "ブルー", "", new uint[] { 60, 80, 50, 40, 40, 30 }, (PokeType.Normal, PokeType.Non), new string[] { "いかく", "にげあし" }, GenderRatio.M1F1));
-            dexData.Add(new Species(210, "グランブル", "", new uint[] { 90, 120, 75, 60, 60, 45 }, (PokeType.Normal, PokeType.Non), new string[] { "いかく", "にげあし" }, GenderRatio.M1F1));
+            dexData.Add(new Species(209, "ブルー", "", new uint[] { 60, 80, 50, 40, 40, 30 }, (PokeType.Normal, PokeType.Non), new string[] { "いかく", "にげあし" }, GenderRatio.M1F3));
+            dexData.Add(new Species(210, "グランブル", "", new uint[] { 90, 120, 75, 60, 60, 45 }, (PokeType.Normal, PokeType.Non), new string[] { "いかく", "にげあし" }, GenderRatio.M1F3));
             dexData.Add(new Species(211, "ハリーセン", "", new uint[] { 65, 95, 75, 55, 55, 85 }, (PokeType.Water, PokeType.Poison), new string[] { "どくのトゲ", "すいすい" }, GenderRatio.M1F1));
             dexData.Add(new Species(212, "ハッサム", "", new uint[] { 70, 130, 100, 55, 80, 65 }, (PokeType.Bug, PokeType.Steel), new string[] { "むしのしらせ", "むしのしらせ" }, GenderRatio.M1F1));
             dexData.Add(new Species(213, "ツボツボ", "", new uint[] { 20, 10, 230, 10, 230, 5 }, (PokeType.Bug, PokeType.Rock), new string[] { "がんじょう", "がんじょう" }, GenderRatio.M1F1));
