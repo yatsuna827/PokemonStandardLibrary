@@ -306,9 +306,9 @@ namespace PokemonStandardLibrary.PokeDex.Gen3
             dexData.Add(new Species(60, "ニョロモ", "", new uint[] { 40, 50, 40, 40, 40, 90 }, (PokeType.Water, PokeType.Non), new string[] { "ちょすい", "しめりけ" }, GenderRatio.M1F1));
             dexData.Add(new Species(61, "ニョロゾ", "", new uint[] { 65, 65, 65, 50, 50, 90 }, (PokeType.Water, PokeType.Non), new string[] { "ちょすい", "しめりけ" }, GenderRatio.M1F1));
             dexData.Add(new Species(62, "ニョロボン", "", new uint[] { 90, 95, 95, 70, 90, 70 }, (PokeType.Water, PokeType.Fighting), new string[] { "ちょすい", "しめりけ" }, GenderRatio.M1F1));
-            dexData.Add(new Species(63, "ケーシィ", "", new uint[] { 25, 20, 15, 105, 55, 90 }, (PokeType.Psychic, PokeType.Non), new string[] { "シンクロ", "せいしんりょく" }, GenderRatio.M1F1));
-            dexData.Add(new Species(64, "ユンゲラー", "", new uint[] { 40, 35, 30, 120, 70, 105 }, (PokeType.Psychic, PokeType.Non), new string[] { "シンクロ", "せいしんりょく" }, GenderRatio.M1F1));
-            dexData.Add(new Species(65, "フーディン", "", new uint[] { 55, 50, 45, 135, 85, 120 }, (PokeType.Psychic, PokeType.Non), new string[] { "シンクロ", "せいしんりょく" }, GenderRatio.M1F1));
+            dexData.Add(new Species(63, "ケーシィ", "", new uint[] { 25, 20, 15, 105, 55, 90 }, (PokeType.Psychic, PokeType.Non), new string[] { "シンクロ", "せいしんりょく" }, GenderRatio.M3F1));
+            dexData.Add(new Species(64, "ユンゲラー", "", new uint[] { 40, 35, 30, 120, 70, 105 }, (PokeType.Psychic, PokeType.Non), new string[] { "シンクロ", "せいしんりょく" }, GenderRatio.M3F1));
+            dexData.Add(new Species(65, "フーディン", "", new uint[] { 55, 50, 45, 135, 85, 120 }, (PokeType.Psychic, PokeType.Non), new string[] { "シンクロ", "せいしんりょく" }, GenderRatio.M3F1));
             dexData.Add(new Species(66, "ワンリキー", "", new uint[] { 70, 80, 50, 35, 35, 35 }, (PokeType.Fighting, PokeType.Non), new string[] { "こんじょう", "こんじょう" }, GenderRatio.M3F1));
             dexData.Add(new Species(67, "ゴーリキー", "", new uint[] { 80, 100, 70, 50, 60, 45 }, (PokeType.Fighting, PokeType.Non), new string[] { "こんじょう", "こんじょう" }, GenderRatio.M3F1));
             dexData.Add(new Species(68, "カイリキー", "", new uint[] { 90, 130, 80, 65, 85, 55 }, (PokeType.Fighting, PokeType.Non), new string[] { "こんじょう", "こんじょう" }, GenderRatio.M3F1));
