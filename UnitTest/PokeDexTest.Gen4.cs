@@ -1,11 +1,11 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Linq;
-using PokemonStandardLibrary.PokeDex.Gen3;
+using PokemonStandardLibrary.PokeDex.Gen4;
 
 using static UnitTest.GenderRatioData;
 
-namespace UnitTest.Gen3
+namespace UnitTest.Gen4
 {
     [TestClass]
     public class PokeDexTest
@@ -21,7 +21,8 @@ namespace UnitTest.Gen3
             {
                 MaleOnly.Gen1,
                 MaleOnly.Gen2,
-                MaleOnly.Gen3
+                MaleOnly.Gen3,
+                MaleOnly.Gen4,
             }.SelectMany(_ => _);
 
             // 含まれているべきデータが含まれているか
@@ -47,7 +48,8 @@ namespace UnitTest.Gen3
             {
                 M7F1.Gen1,
                 M7F1.Gen2,
-                M7F1.Gen3
+                M7F1.Gen3,
+                M7F1.Gen4,
             }.SelectMany(_ => _);
 
             // 含まれているべきデータが含まれているか
@@ -73,7 +75,8 @@ namespace UnitTest.Gen3
             {
                 M3F1.Gen1,
                 M3F1.Gen2,
-                M3F1.Gen3
+                M3F1.Gen3,
+                M3F1.Gen4,
             }.SelectMany(_ => _);
 
             // 含まれているべきデータが含まれているか
@@ -99,7 +102,8 @@ namespace UnitTest.Gen3
             {
                 FemaleOnly.Gen1,
                 FemaleOnly.Gen2,
-                FemaleOnly.Gen3
+                FemaleOnly.Gen3,
+                FemaleOnly.Gen4,
             }.SelectMany(_ => _);
 
             // 含まれているべきデータが含まれているか
@@ -125,7 +129,8 @@ namespace UnitTest.Gen3
             {
                 M1F3.Gen1,
                 M1F3.Gen2,
-                M1F3.Gen3
+                M1F3.Gen3,
+                M1F3.Gen4,
             }.SelectMany(_ => _);
 
             // 含まれているべきデータが含まれているか
@@ -152,6 +157,7 @@ namespace UnitTest.Gen3
                 Genderless.Gen1,
                 Genderless.Gen2,
                 Genderless.Gen3,
+                Genderless.Gen4,
             }.SelectMany(_ => _);
 
             // 含まれているべきデータが含まれているか
