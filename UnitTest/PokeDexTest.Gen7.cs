@@ -14,7 +14,9 @@ namespace UnitTest.Gen7
         public void RatioMaleOnly()
         {
             var sample = Pokemon.GetAllPokemonList()
-                .Where(_ => _.GenderRatio == PokemonStandardLibrary.GenderRatio.MaleOnly)
+                .Where(_ => _.GenderRatio == PokemonStandardLibrary.GenderRatio.MaleOnly
+                            && !_.FormName.Contains("♂") 
+                            && _.FormName != "サトシ")
                 .Select(_ => _.Name);
 
             var dataSet = new string[][]
@@ -31,13 +33,13 @@ namespace UnitTest.Gen7
             // 含まれているべきデータが含まれているか
             foreach(var data in dataSet)
             {
-                Assert.IsTrue(sample.Contains(data), data);
+                Assert.IsTrue(sample.Contains(data), "mustContain:" + data);
             }
 
             // 余計なデータが含まれていないか
             foreach(var data in sample)
             {
-                Assert.IsTrue(dataSet.Contains(data), data);
+                Assert.IsTrue(dataSet.Contains(data), "mustNotContain:" + data);
             }
         }
         [TestMethod]
@@ -61,13 +63,13 @@ namespace UnitTest.Gen7
             // 含まれているべきデータが含まれているか
             foreach (var data in dataSet)
             {
-                Assert.IsTrue(sample.Contains(data), data);
+                Assert.IsTrue(sample.Contains(data), "mustContain:" + data);
             }
 
             // 余計なデータが含まれていないか
             foreach (var data in sample)
             {
-                Assert.IsTrue(dataSet.Contains(data), data);
+                Assert.IsTrue(dataSet.Contains(data), "mustNotContain:" + data);
             }
         }
         [TestMethod]
@@ -104,7 +106,7 @@ namespace UnitTest.Gen7
         public void RatioFemaleOnly()
         {
             var sample = Pokemon.GetAllPokemonList()
-                .Where(_ => _.GenderRatio == PokemonStandardLibrary.GenderRatio.FemaleOnly)
+                .Where(_ => _.GenderRatio == PokemonStandardLibrary.GenderRatio.FemaleOnly && !_.FormName.Contains("♀"))
                 .Select(_ => _.Name);
 
             var dataSet = new string[][]
@@ -121,13 +123,13 @@ namespace UnitTest.Gen7
             // 含まれているべきデータが含まれているか
             foreach (var data in dataSet)
             {
-                Assert.IsTrue(sample.Contains(data), data);
+                Assert.IsTrue(sample.Contains(data), "mustContain:" + data);
             }
 
             // 余計なデータが含まれていないか
             foreach (var data in sample)
             {
-                Assert.IsTrue(dataSet.Contains(data), data);
+                Assert.IsTrue(dataSet.Contains(data), "mustNotContain:" + data);
             }
         }
         [TestMethod]
@@ -151,13 +153,13 @@ namespace UnitTest.Gen7
             // 含まれているべきデータが含まれているか
             foreach (var data in dataSet)
             {
-                Assert.IsTrue(sample.Contains(data), data);
+                Assert.IsTrue(sample.Contains(data), "mustContain:" + data);
             }
 
             // 余計なデータが含まれていないか
             foreach (var data in sample)
             {
-                Assert.IsTrue(dataSet.Contains(data), data);
+                Assert.IsTrue(dataSet.Contains(data), "mustNotContain:" + data);
             }
         }
         [TestMethod]
@@ -181,13 +183,13 @@ namespace UnitTest.Gen7
             // 含まれているべきデータが含まれているか
             foreach (var data in dataSet)
             {
-                Assert.IsTrue(sample.Contains(data), data);
+                Assert.IsTrue(sample.Contains(data), "mustContain:" + data);
             }
 
             // 余計なデータが含まれていないか
             foreach (var data in sample)
             {
-                Assert.IsTrue(dataSet.Contains(data), data);
+                Assert.IsTrue(dataSet.Contains(data), "mustNotContain:" + data);
             }
         }
     }
