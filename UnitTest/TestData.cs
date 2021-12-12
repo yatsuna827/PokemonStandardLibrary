@@ -327,6 +327,7 @@ namespace UnitTest
             };
             public static string[] Gen8 = new string[]
             {
+                "メルタン", "メルメタル",
                 "ヤバチャ", "ポットデス",
                 "タイレーツ",
                 "パッチラゴン", "パッチルドン", "ウオノラゴン", "ウオチルドン",

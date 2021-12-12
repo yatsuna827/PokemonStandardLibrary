@@ -1,11 +1,11 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+ï»¿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Linq;
-using PokemonStandardLibrary.Gen7;
+using PokemonStandardLibrary.Gen8;
 
 using static UnitTest.GenderRatioData;
 
-namespace UnitTest.Gen7
+namespace UnitTest.Gen8
 {
     [TestClass]
     public class PokeDexTest
@@ -15,8 +15,8 @@ namespace UnitTest.Gen7
         {
             var sample = Pokemon.GetAllPokemonList()
                 .Where(_ => _.GenderRatio == PokemonStandardLibrary.GenderRatio.MaleOnly
-                            && !_.FormName.Contains("‰") 
-                            && _.FormName != "ƒTƒgƒV")
+                            && !_.FormName.Contains("â™‚")
+                            && _.FormName != "ã‚µãƒˆã‚·")
                 .Select(_ => _.Name);
 
             var dataSet = new string[][]
@@ -28,16 +28,17 @@ namespace UnitTest.Gen7
                 MaleOnly.Gen5,
                 MaleOnly.Gen6,
                 MaleOnly.Gen7,
+                MaleOnly.Gen8,
             }.SelectMany(_ => _);
 
-            // ŠÜ‚Ü‚ê‚Ä‚¢‚é‚×‚«ƒf[ƒ^‚ªŠÜ‚Ü‚ê‚Ä‚¢‚é‚©
-            foreach(var data in dataSet)
+            // å«ã¾ã‚Œã¦ã„ã‚‹ã¹ããƒ‡ãƒ¼ã‚¿ãŒå«ã¾ã‚Œã¦ã„ã‚‹ã‹
+            foreach (var data in dataSet)
             {
                 Assert.IsTrue(sample.Contains(data), "mustContain:" + data);
             }
 
-            // —]Œv‚Èƒf[ƒ^‚ªŠÜ‚Ü‚ê‚Ä‚¢‚È‚¢‚©
-            foreach(var data in sample)
+            // ä½™è¨ˆãªãƒ‡ãƒ¼ã‚¿ãŒå«ã¾ã‚Œã¦ã„ãªã„ã‹
+            foreach (var data in sample)
             {
                 Assert.IsTrue(dataSet.Contains(data), "mustNotContain:" + data);
             }
@@ -58,15 +59,16 @@ namespace UnitTest.Gen7
                 M7F1.Gen5,
                 M7F1.Gen6,
                 M7F1.Gen7,
+                M7F1.Gen8,
             }.SelectMany(_ => _);
 
-            // ŠÜ‚Ü‚ê‚Ä‚¢‚é‚×‚«ƒf[ƒ^‚ªŠÜ‚Ü‚ê‚Ä‚¢‚é‚©
+            // å«ã¾ã‚Œã¦ã„ã‚‹ã¹ããƒ‡ãƒ¼ã‚¿ãŒå«ã¾ã‚Œã¦ã„ã‚‹ã‹
             foreach (var data in dataSet)
             {
                 Assert.IsTrue(sample.Contains(data), "mustContain:" + data);
             }
 
-            // —]Œv‚Èƒf[ƒ^‚ªŠÜ‚Ü‚ê‚Ä‚¢‚È‚¢‚©
+            // ä½™è¨ˆãªãƒ‡ãƒ¼ã‚¿ãŒå«ã¾ã‚Œã¦ã„ãªã„ã‹
             foreach (var data in sample)
             {
                 Assert.IsTrue(dataSet.Contains(data), "mustNotContain:" + data);
@@ -88,15 +90,16 @@ namespace UnitTest.Gen7
                 M3F1.Gen5,
                 M3F1.Gen6,
                 M3F1.Gen7,
+                M3F1.Gen8,
             }.SelectMany(_ => _);
 
-            // ŠÜ‚Ü‚ê‚Ä‚¢‚é‚×‚«ƒf[ƒ^‚ªŠÜ‚Ü‚ê‚Ä‚¢‚é‚©
+            // å«ã¾ã‚Œã¦ã„ã‚‹ã¹ããƒ‡ãƒ¼ã‚¿ãŒå«ã¾ã‚Œã¦ã„ã‚‹ã‹
             foreach (var data in dataSet)
             {
                 Assert.IsTrue(sample.Contains(data), data);
             }
 
-            // —]Œv‚Èƒf[ƒ^‚ªŠÜ‚Ü‚ê‚Ä‚¢‚È‚¢‚©
+            // ä½™è¨ˆãªãƒ‡ãƒ¼ã‚¿ãŒå«ã¾ã‚Œã¦ã„ãªã„ã‹
             foreach (var data in sample)
             {
                 Assert.IsTrue(dataSet.Contains(data), data);
@@ -106,7 +109,7 @@ namespace UnitTest.Gen7
         public void RatioFemaleOnly()
         {
             var sample = Pokemon.GetAllPokemonList()
-                .Where(_ => _.GenderRatio == PokemonStandardLibrary.GenderRatio.FemaleOnly && !_.FormName.Contains("Š"))
+                .Where(_ => _.GenderRatio == PokemonStandardLibrary.GenderRatio.FemaleOnly && !_.FormName.Contains("â™€"))
                 .Select(_ => _.Name);
 
             var dataSet = new string[][]
@@ -118,15 +121,16 @@ namespace UnitTest.Gen7
                 FemaleOnly.Gen5,
                 FemaleOnly.Gen6,
                 FemaleOnly.Gen7,
+                FemaleOnly.Gen8,
             }.SelectMany(_ => _);
 
-            // ŠÜ‚Ü‚ê‚Ä‚¢‚é‚×‚«ƒf[ƒ^‚ªŠÜ‚Ü‚ê‚Ä‚¢‚é‚©
+            // å«ã¾ã‚Œã¦ã„ã‚‹ã¹ããƒ‡ãƒ¼ã‚¿ãŒå«ã¾ã‚Œã¦ã„ã‚‹ã‹
             foreach (var data in dataSet)
             {
                 Assert.IsTrue(sample.Contains(data), "mustContain:" + data);
             }
 
-            // —]Œv‚Èƒf[ƒ^‚ªŠÜ‚Ü‚ê‚Ä‚¢‚È‚¢‚©
+            // ä½™è¨ˆãªãƒ‡ãƒ¼ã‚¿ãŒå«ã¾ã‚Œã¦ã„ãªã„ã‹
             foreach (var data in sample)
             {
                 Assert.IsTrue(dataSet.Contains(data), "mustNotContain:" + data);
@@ -148,15 +152,16 @@ namespace UnitTest.Gen7
                 M1F3.Gen5,
                 M1F3.Gen6,
                 M1F3.Gen7,
+                M1F3.Gen8,
             }.SelectMany(_ => _);
 
-            // ŠÜ‚Ü‚ê‚Ä‚¢‚é‚×‚«ƒf[ƒ^‚ªŠÜ‚Ü‚ê‚Ä‚¢‚é‚©
+            // å«ã¾ã‚Œã¦ã„ã‚‹ã¹ããƒ‡ãƒ¼ã‚¿ãŒå«ã¾ã‚Œã¦ã„ã‚‹ã‹
             foreach (var data in dataSet)
             {
                 Assert.IsTrue(sample.Contains(data), "mustContain:" + data);
             }
 
-            // —]Œv‚Èƒf[ƒ^‚ªŠÜ‚Ü‚ê‚Ä‚¢‚È‚¢‚©
+            // ä½™è¨ˆãªãƒ‡ãƒ¼ã‚¿ãŒå«ã¾ã‚Œã¦ã„ãªã„ã‹
             foreach (var data in sample)
             {
                 Assert.IsTrue(dataSet.Contains(data), "mustNotContain:" + data);
@@ -178,19 +183,26 @@ namespace UnitTest.Gen7
                 Genderless.Gen5,
                 Genderless.Gen6,
                 Genderless.Gen7,
+                Genderless.Gen8,
             }.SelectMany(_ => _);
 
-            // ŠÜ‚Ü‚ê‚Ä‚¢‚é‚×‚«ƒf[ƒ^‚ªŠÜ‚Ü‚ê‚Ä‚¢‚é‚©
+            // å«ã¾ã‚Œã¦ã„ã‚‹ã¹ããƒ‡ãƒ¼ã‚¿ãŒå«ã¾ã‚Œã¦ã„ã‚‹ã‹
             foreach (var data in dataSet)
             {
                 Assert.IsTrue(sample.Contains(data), "mustContain:" + data);
             }
 
-            // —]Œv‚Èƒf[ƒ^‚ªŠÜ‚Ü‚ê‚Ä‚¢‚È‚¢‚©
+            // ä½™è¨ˆãªãƒ‡ãƒ¼ã‚¿ãŒå«ã¾ã‚Œã¦ã„ãªã„ã‹
             foreach (var data in sample)
             {
                 Assert.IsTrue(dataSet.Contains(data), "mustNotContain:" + data);
             }
+        }
+
+        [TestMethod]
+        public void GetPokemon()
+        {
+            Assert.AreEqual(Pokemon.GetPokemon("ãƒªã‚¶ãƒ¼ãƒ‰ãƒ³", "ã‚­ãƒ§ãƒ€ã‚¤"), Pokemon.GetPokemon("ãƒªã‚¶ãƒ¼ãƒ‰ãƒ³#ã‚­ãƒ§ãƒ€ã‚¤"));
         }
     }
 }

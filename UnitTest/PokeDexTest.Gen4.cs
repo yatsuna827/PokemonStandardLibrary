@@ -1,7 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Linq;
-using PokemonStandardLibrary.PokeDex.Gen4;
+using PokemonStandardLibrary.Gen4;
 
 using static UnitTest.GenderRatioData;
 
