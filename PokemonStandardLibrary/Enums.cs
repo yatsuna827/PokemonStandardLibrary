@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using PokemonStandardLibrary.Language;
 
 namespace PokemonStandardLibrary
 {
@@ -147,8 +148,12 @@ namespace PokemonStandardLibrary.CommonExtension
 
         public static string ToKanji(this PokeType pokeType) { return PokeType_Kanji[(int)pokeType]; }
         public static string ToJapanese(this PokeType pokeType) { return PokeType_JP[(int)pokeType]; }
+        public static string ToString(this PokeType pokeType, ITranslator<PokeType> lang)
+            => lang.Translate(pokeType);
 
         public static string ToJapanese(this Nature nature) => Nature_JP[(int)nature];
+        public static string ToString(this Nature nature, ITranslator<Nature> lang)
+            => lang.Translate(nature);
         public static double[] ToMagnifications(this Nature nature)=> Magnifications[(int)nature].ToArray();
         public static bool IsUncorrected(this Nature nature) => (uint)nature / 5 == (uint)nature % 5;
 
