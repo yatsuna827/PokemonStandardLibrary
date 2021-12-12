@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace PokemonStandardLibrary.PokeDex.Gen4
+namespace PokemonStandardLibrary.Gen4
 {
     public static class GameVersionDependent
     {

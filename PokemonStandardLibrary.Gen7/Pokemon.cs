@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using PokemonStandardLibrary.CommonExtension;
 
-namespace PokemonStandardLibrary.PokeDex.Gen7
+namespace PokemonStandardLibrary.Gen7
 {
     public class Pokemon
     {

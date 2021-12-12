@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PokemonStandardLibrary.PokeDex.Gen4
+namespace PokemonStandardLibrary.Gen4
 {
     public enum GameVersion
     {
