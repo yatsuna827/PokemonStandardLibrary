@@ -6,7 +6,6 @@ namespace PokemonStandardLibrary
 {
     public static class HiddenPowerCalculator
     {
-
         public static uint CalcHiddenPower(uint[] ivs)
         {
             uint num = ((ivs[0] >> 1) & 1) + 2 * ((ivs[1] >> 1) & 1) + 4 * ((ivs[2] >> 1) & 1) + 8 * ((ivs[5] >> 1) & 1) + 16 * ((ivs[3] >> 1) & 1) + 32 * ((ivs[4] >> 1) & 1);
