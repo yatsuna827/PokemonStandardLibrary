@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>yatsuna_827</Authors>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <Description>ポケモンの種族データやタイプ、性格などの基礎的なデータを提供するライブラリです。</Description>
+    <Copyright></Copyright>
+    <PackageProjectUrl></PackageProjectUrl>
+    <RepositoryUrl>https://github.com/yatsuna827/PokemonStandardLibrary</RepositoryUrl>
+    <Version>1.3.0</Version>
+  </PropertyGroup>
+
+</Project>

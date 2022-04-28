@@ -374,7 +374,6 @@ FodyWeavers.xsd
  
 # ソリューションやプロジェクトファイル
 ExportedObj/
-*.csproj
 *.suo
 *.tmp
 *.user
