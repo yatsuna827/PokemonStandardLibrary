@@ -11,6 +11,13 @@ namespace UnitTest.Gen4
     public class PokeDexTest
     {
         [TestMethod]
+        public void GetAllForms()
+        {
+            Assert.AreEqual(Pokemon.GetAllPokemonList().Where(_ => _.Name == "ピカチュウ").Count(), Pokemon.GetAllForms("ピカチュウ").Count);
+            Assert.AreEqual(Pokemon.GetAllPokemonList().Where(_ => _.Name == "ポワルン").Count(), Pokemon.GetAllForms("ポワルン").Count);
+            Assert.AreEqual(Pokemon.GetAllPokemonList().Where(_ => _.Name == "アンノーン").Count(), Pokemon.GetAllForms("アンノーン").Count);
+        }
+        [TestMethod]
         public void RatioMaleOnly()
         {
             var sample = Pokemon.GetAllPokemonList()
@@ -171,6 +178,12 @@ namespace UnitTest.Gen4
             {
                 Assert.IsTrue(dataSet.Contains(data), data);
             }
+        }
+
+        [TestMethod]
+        public void Shadinja()
+        {
+            Assert.AreEqual(1u, Pokemon.GetPokemon("ヌケニン").GetIndividual(100, new uint[] { 31, 31, 31, 31, 31, 31 }, 0).Stats[0]);
         }
     }
 }

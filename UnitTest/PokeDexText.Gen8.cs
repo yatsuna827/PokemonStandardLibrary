@@ -11,12 +11,19 @@ namespace UnitTest.Gen8
     public class PokeDexTest
     {
         [TestMethod]
+        public void GetAllForms()
+        {
+            Assert.AreEqual(Pokemon.GetAllPokemonList().Where(_ => _.Name == "ピカチュウ").Count(), Pokemon.GetAllForms("ピカチュウ").Count);
+            Assert.AreEqual(Pokemon.GetAllPokemonList().Where(_ => _.Name == "ポワルン").Count(), Pokemon.GetAllForms("ポワルン").Count);
+            Assert.AreEqual(Pokemon.GetAllPokemonList().Where(_ => _.Name == "アンノーン").Count(), Pokemon.GetAllForms("アンノーン").Count);
+        }
+        [TestMethod]
         public void RatioMaleOnly()
         {
             var sample = Pokemon.GetAllPokemonList()
                 .Where(_ => _.GenderRatio == PokemonStandardLibrary.GenderRatio.MaleOnly
-                            && !_.FormName.Contains("♂")
-                            && _.FormName != "サトシ")
+                            && !_.Form.Contains("♂")
+                            && _.Form != "サトシ")
                 .Select(_ => _.Name);
 
             var dataSet = new string[][]
@@ -109,7 +116,7 @@ namespace UnitTest.Gen8
         public void RatioFemaleOnly()
         {
             var sample = Pokemon.GetAllPokemonList()
-                .Where(_ => _.GenderRatio == PokemonStandardLibrary.GenderRatio.FemaleOnly && !_.FormName.Contains("♀"))
+                .Where(_ => _.GenderRatio == PokemonStandardLibrary.GenderRatio.FemaleOnly && !_.Form.Contains("♀"))
                 .Select(_ => _.Name);
 
             var dataSet = new string[][]
@@ -203,6 +210,12 @@ namespace UnitTest.Gen8
         public void GetPokemon()
         {
             Assert.AreEqual(Pokemon.GetPokemon("リザードン", "キョダイ"), Pokemon.GetPokemon("リザードン#キョダイ"));
+        }
+
+        [TestMethod]
+        public void Shadinja()
+        {
+            Assert.AreEqual(1u, Pokemon.GetPokemon("ヌケニン").GetIndividual(100, new uint[] { 31, 31, 31, 31, 31, 31 }, 0, 0, 0, 0, 0).Stats[0]);
         }
     }
 }
