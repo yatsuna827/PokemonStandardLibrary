@@ -26,7 +26,7 @@ namespace PokemonStandardLibrary
     }
     public enum PokeType
     {
-        Non = 0,
+        None = 0,
         Normal = (1<<0), 
         Fire = (1<<1), 
         Water = (1<<2), 
@@ -92,7 +92,7 @@ namespace PokemonStandardLibrary.CommonExtension
         };
         static private readonly Dictionary<int, string> PokeType_Kanji = new Dictionary<int, string>()
         {
-            { (int) PokeType.Non,      "---" },
+            { (int) PokeType.None,      "---" },
             { (int) PokeType.Normal,   "普" },
             { (int) PokeType.Fire,     "炎" },
             { (int) PokeType.Water,    "水" },
@@ -114,7 +114,7 @@ namespace PokemonStandardLibrary.CommonExtension
         };
         static private readonly Dictionary<int, string> PokeType_JP = new Dictionary<int, string>()
         {
-            { (int)PokeType.Non,      "---" },
+            { (int)PokeType.None,      "---" },
             { (int)PokeType.Normal,   "ノーマル" },
             { (int)PokeType.Fire,     "ほのお" },
             { (int)PokeType.Water,    "みず" },
