@@ -153,11 +153,6 @@ namespace PokemonStandardLibrary.Gen8
             return (minIVs, maxIVs);
         }
         
-        public static string[] GetEggMoves(this Pokemon.Species species)
-        {
-            return new string[0];
-        }
-
         private static DataStore<HoldingItem> _holdingItemsStore;
         /// <summary>
         /// 戻り値はnullableなので注意してね！
