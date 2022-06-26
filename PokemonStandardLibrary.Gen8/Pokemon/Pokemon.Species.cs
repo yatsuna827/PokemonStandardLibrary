@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using PokemonStandardLibrary.CommonExtension;
+using System.Text.Json.Serialization;
 
 namespace PokemonStandardLibrary.Gen8
 {
@@ -48,6 +49,17 @@ namespace PokemonStandardLibrary.Gen8
                 => $"{Name}#{Form}";
         }
     }
+
+    public class HoldingItem
+    {
+        [JsonInclude]
+        public string Guaranteed { get; set; }
+        [JsonInclude]
+        public string Common { get; set; }
+        [JsonInclude]
+        public string Rare { get; set; }
+    }
+
 
     public static class SpeciesExtensions
     {
@@ -139,6 +151,38 @@ namespace PokemonStandardLibrary.Gen8
             }
 
             return (minIVs, maxIVs);
+        }
+        
+        public static string[] GetEggMoves(this Pokemon.Species species)
+        {
+            return new string[0];
+        }
+
+        private static DataStore<HoldingItem> _holdingItemsStore;
+        /// <summary>
+        /// 戻り値はnullableなので注意してね！
+        /// 持ち物を一切持っていない場合はnullが返ってきますよ！
+        /// </summary>
+        /// <param name="species"></param>
+        /// <returns></returns>
+        public static HoldingItem HoldingItems(this Pokemon.Species species)
+        {
+            if (_holdingItemsStore is null) _holdingItemsStore = new DataStore<HoldingItem>(Properties.Resources.holdingItem);
+
+            return _holdingItemsStore.GetData(species.GetDefaultName());
+        }
+
+        private static DataStore<string[]> _eggMoves;
+        /// <summary>
+        /// 戻り値はNon-Nullable
+        /// </summary>
+        /// <param name="species"></param>
+        /// <returns></returns>
+        public static string[] EggMoves(this Pokemon.Species species)
+        {
+            if (_eggMoves is null) _eggMoves = new DataStore<string[]>(Properties.Resources.eggMoves);
+
+            return _eggMoves.GetData(species.GetDefaultName()) ?? new string[0];
         }
     }
 }

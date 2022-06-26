@@ -99,6 +99,59 @@ namespace PokemonStandardLibrary.Gen8.Properties {
         }
         
         /// <summary>
+        ///   {
+        ///  &quot;フシギダネ&quot;: [],
+        ///  &quot;フシギソウ&quot;: [],
+        ///  &quot;フシギバナ&quot;: [],
+        ///  &quot;フシギバナ#キョダイ&quot;: [],
+        ///  &quot;ヒトカゲ&quot;: [],
+        ///  &quot;リザード&quot;: [],
+        ///  &quot;リザードン&quot;: [],
+        ///  &quot;リザードン#キョダイ&quot;: [],
+        ///  &quot;ゼニガメ&quot;: [],
+        ///  &quot;カメール&quot;: [],
+        ///  &quot;カメックス&quot;: [],
+        ///  &quot;カメックス#キョダイ&quot;: [],
+        ///  &quot;キャタピー&quot;: [],
+        ///  &quot;トランセル&quot;: [],
+        ///  &quot;バタフリー&quot;: [],
+        ///  &quot;バタフリー#キョダイ&quot;: [],
+        ///  &quot;ピカチュウ&quot;: [ &quot;プレゼント&quot;, &quot;ねがいごと&quot;, &quot;じゅうでん&quot;, &quot;ねこだまし&quot;, &quot;くすぐる&quot;, &quot;じたばた&quot;, &quot;チャームボイス&quot; ],
+        ///  &quot;ピカチュウ#キョダイ&quot;: [ &quot;プレゼント&quot;, &quot;ねがいごと&quot;, &quot;じゅうでん&quot;, &quot;ねこだまし&quot;, &quot;くすぐる&quot;, &quot;じたばた&quot;, &quot;チャームボイス&quot; ],
+        ///  &quot;ライチュウ&quot;: [ &quot;プレゼント&quot;, &quot;ねがいごと&quot;, &quot;じゅうでん&quot;, &quot;ねこだまし&quot;, &quot;くすぐる&quot;, &quot;じたばた&quot;, &quot;チャームボイス&quot; [残りの文字列は切り詰められました]&quot;; に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string eggMoves {
+            get {
+                return ResourceManager.GetString("eggMoves", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   {
+        ///  &quot;バタフリー&quot;: { &quot;rare&quot;: &quot;ぎんのこな&quot; },
+        ///  &quot;ピカチュウ&quot;: { &quot;rare&quot;: &quot;でんきだま&quot; },
+        ///  &quot;サンド&quot;: { &quot;rare&quot;: &quot;ねばりのかぎづめ&quot; },
+        ///  &quot;サンドパン&quot;: { &quot;rare&quot;: &quot;ねばりのかぎづめ&quot; },
+        ///  &quot;ピッピ&quot;: { &quot;rare&quot;: &quot;つきのいし&quot; },
+        ///  &quot;ピクシー&quot;: { &quot;rare&quot;: &quot;つきのいし&quot; },
+        ///  &quot;ロコン&quot;: { &quot;rare&quot;: &quot;もくたん&quot; },
+        ///  &quot;キュウコン&quot;: { &quot;rare&quot;: &quot;もくたん&quot; },
+        ///  &quot;プリン&quot;: { &quot;rare&quot;: &quot;つきのいし&quot; },
+        ///  &quot;プクリン&quot;: { &quot;rare&quot;: &quot;つきのいし&quot; },
+        ///  &quot;ナゾノクサ&quot;: { &quot;rare&quot;: &quot;きゅうこん&quot; },
+        ///  &quot;クサイハナ&quot;: { &quot;rare&quot;: &quot;きゅうこん&quot; },
+        ///  &quot;ラフレシア&quot;: { &quot;rare&quot;: &quot;きゅうこん&quot; },
+        ///  &quot;ディグダ&quot;: { &quot;rare&quot;: &quot;やわらかいすな&quot; },
+        ///  &quot;ダグトリオ&quot;: { &quot;rare&quot;: &quot;やわらかいすな&quot; },
+        ///  &quot;ニョロゾ&quot;: { &quot;rare [残りの文字列は切り詰められました]&quot;; に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string holdingItem {
+            get {
+                return ResourceManager.GetString("holdingItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   フシギダネ,Bulbasaur
         ///フシギソウ,Ivysaur
         ///フシギバナ,Venusaur

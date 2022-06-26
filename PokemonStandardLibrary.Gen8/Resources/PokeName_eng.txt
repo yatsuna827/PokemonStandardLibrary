@@ -962,7 +962,9 @@
 まいまい,Sensu
 コア,Core
 流星,Meteor
+贋作,Phony
+真作,Antique
 れんげき,Rapid Strike
 いちげき,Single Strike
-はくばじょう,Ice Rider
-こくばじょう,Shadow Rider
+はくば,Ice Rider
+こくば,Shadow Rider

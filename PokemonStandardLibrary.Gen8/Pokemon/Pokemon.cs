@@ -1044,8 +1044,10 @@ namespace PokemonStandardLibrary.Gen8
             dexData.Add(new AnotherForm(851, 160, -1, 100, "マルヤクデ", "キョダイ", new uint[] { 100, 115, 65, 90, 90, 65 }, (PokeType.Fire, PokeType.Bug), new string[] { "もらいび", "しろいけむり", "ほのおのからだ" }, GenderRatio.M1F1));
             dexData.Add(new Species(852, 351, 129, -1, "タタッコ", "", new uint[] { 50, 68, 60, 50, 50, 32 }, (PokeType.Fighting, PokeType.None), new string[] { "じゅうなん", "じゅうなん", "テクニシャン" }, GenderRatio.M1F1));
             dexData.Add(new Species(853, 352, 130, -1, "オトスパス", "", new uint[] { 80, 118, 90, 70, 80, 42 }, (PokeType.Fighting, PokeType.None), new string[] { "じゅうなん", "じゅうなん", "テクニシャン" }, GenderRatio.M1F1));
-            dexData.Add(new Species(854, 335, -1, 132, "ヤバチャ", "", new uint[] { 40, 45, 45, 74, 54, 50 }, (PokeType.Ghost, PokeType.None), new string[] { "くだけるよろい", "くだけるよろい", "のろわれボディ" }, GenderRatio.Genderless));
-            dexData.Add(new Species(855, 336, -1, 133, "ポットデス", "", new uint[] { 60, 65, 65, 134, 114, 70 }, (PokeType.Ghost, PokeType.None), new string[] { "くだけるよろい", "くだけるよろい", "のろわれボディ" }, GenderRatio.Genderless));
+            dexData.Add(new AnotherForm(854, 335, -1, 132, "ヤバチャ", "贋作", new uint[] { 40, 45, 45, 74, 54, 50 }, (PokeType.Ghost, PokeType.None), new string[] { "くだけるよろい", "くだけるよろい", "のろわれボディ" }, GenderRatio.Genderless));
+            dexData.Add(new AnotherForm(854, 335, -1, 132, "ヤバチャ", "真作", new uint[] { 40, 45, 45, 74, 54, 50 }, (PokeType.Ghost, PokeType.None), new string[] { "くだけるよろい", "くだけるよろい", "のろわれボディ" }, GenderRatio.Genderless));
+            dexData.Add(new AnotherForm(855, 336, -1, 133, "ポットデス", "贋作", new uint[] { 60, 65, 65, 134, 114, 70 }, (PokeType.Ghost, PokeType.None), new string[] { "くだけるよろい", "くだけるよろい", "のろわれボディ" }, GenderRatio.Genderless));
+            dexData.Add(new AnotherForm(855, 336, -1, 133, "ポットデス", "真作", new uint[] { 60, 65, 65, 134, 114, 70 }, (PokeType.Ghost, PokeType.None), new string[] { "くだけるよろい", "くだけるよろい", "のろわれボディ" }, GenderRatio.Genderless));
             dexData.Add(new Species(856, 241, -1, 40, "ミブリム", "", new uint[] { 42, 30, 45, 56, 53, 39 }, (PokeType.Psychic, PokeType.None), new string[] { "いやしのこころ", "きけんよち", "マジックミラー" }, GenderRatio.FemaleOnly));
             dexData.Add(new Species(857, 242, -1, 41, "テブリム", "", new uint[] { 57, 40, 65, 86, 73, 49 }, (PokeType.Psychic, PokeType.None), new string[] { "いやしのこころ", "きけんよち", "マジックミラー" }, GenderRatio.FemaleOnly));
             dexData.Add(new Species(858, 243, -1, 42, "ブリムオン", "", new uint[] { 57, 90, 95, 136, 103, 29 }, (PokeType.Psychic, PokeType.Fairy), new string[] { "いやしのこころ", "きけんよち", "マジックミラー" }, GenderRatio.FemaleOnly));
@@ -1098,8 +1100,8 @@ namespace PokemonStandardLibrary.Gen8
             dexData.Add(new Species(896, -1, -1, 208, "ブリザポス", "", new uint[] { 100, 145, 130, 65, 110, 30 }, (PokeType.Ice, PokeType.None), new string[] { "しろのいななき", "しろのいななき", "しろのいななき" }, GenderRatio.Genderless));
             dexData.Add(new Species(897, -1, -1, 209, "レイスポス", "", new uint[] { 100, 65, 60, 145, 80, 130 }, (PokeType.Ghost, PokeType.None), new string[] { "くろのいななき", "くろのいななき", "くろのいななき" }, GenderRatio.Genderless));
             dexData.Add(new Species(898, -1, -1, 210, "バドレックス", "", new uint[] { 100, 80, 80, 80, 80, 80 }, (PokeType.Psychic, PokeType.Grass), new string[] { "きんちょうかん", "きんちょうかん", "きんちょうかん" }, GenderRatio.Genderless));
-            dexData.Add(new AnotherForm(898, -1, -1, 210, "バドレックス", "はくばじょう", new uint[] { 100, 165, 150, 85, 130, 50 }, (PokeType.Psychic, PokeType.Ice), new string[] { "じんばいったい", "じんばいったい", "じんばいったい" }, GenderRatio.Genderless));
-            dexData.Add(new AnotherForm(898, -1, -1, 210, "バドレックス", "こくばじょう", new uint[] { 100, 85, 80, 165, 100, 150 }, (PokeType.Psychic, PokeType.Ghost), new string[] { "じんばいったい", "じんばいったい", "じんばいったい" }, GenderRatio.Genderless));
+            dexData.Add(new AnotherForm(898, -1, -1, 210, "バドレックス", "はくば", new uint[] { 100, 165, 150, 85, 130, 50 }, (PokeType.Psychic, PokeType.Ice), new string[] { "じんばいったい", "じんばいったい", "じんばいったい" }, GenderRatio.Genderless));
+            dexData.Add(new AnotherForm(898, -1, -1, 210, "バドレックス", "こくば", new uint[] { 100, 85, 80, 165, 100, 150 }, (PokeType.Psychic, PokeType.Ghost), new string[] { "じんばいったい", "じんばいったい", "じんばいったい" }, GenderRatio.Genderless));
 
             // 名前+フォルムでDictionaryに追加。
             // フォルム名無しがないポケモンはDexDataの若いほうから.
