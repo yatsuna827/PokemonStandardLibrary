@@ -53,11 +53,11 @@ namespace PokemonStandardLibrary.Gen8
     public class HoldingItem
     {
         [JsonInclude]
-        public string Guaranteed { get; set; }
+        public string Guaranteed { get; private set; }
         [JsonInclude]
-        public string Common { get; set; }
+        public string Common { get; private set; }
         [JsonInclude]
-        public string Rare { get; set; }
+        public string Rare { get; private set; }
     }
 
 
