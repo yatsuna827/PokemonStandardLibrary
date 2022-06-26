@@ -7,6 +7,8 @@ namespace PokemonStandardLibrary.Gen3
     {
         public class Individual
         {
+            public Species Species { get; }
+
             public string Name { get; }
             public string Form { get; }
             public uint Lv { get; }
@@ -28,6 +30,7 @@ namespace PokemonStandardLibrary.Gen3
 
             internal protected Individual(Species species, uint pid, uint[] ivs, uint lv, uint[] evs = null)
             {
+                Species = species;
                 Name = species.Name;
                 Lv = lv;
                 Form = species.Form;

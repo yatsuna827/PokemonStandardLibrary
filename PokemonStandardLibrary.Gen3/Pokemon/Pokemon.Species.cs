@@ -16,13 +16,14 @@ namespace PokemonStandardLibrary.Gen3
             public IReadOnlyList<string> Ability { get; }
             public (PokeType Type1, PokeType Type2) Type { get; }
             public GenderRatio GenderRatio { get; }
+            public bool IsHatchable { get; }
 
             public virtual string GetDefaultName() => Name;
 
             public Individual GetIndividual(uint lv, uint[] ivs, uint pid) => new Individual(this, pid, ivs, lv);
             public Individual GetIndividual(uint lv, uint[] ivs, uint[] evs, uint pid) => new Individual(this, pid, ivs, lv, evs);
 
-            internal Species(int dexID, string name, string formName, uint[] bs, (PokeType type1, PokeType type2) type, string[] ability, GenderRatio ratio)
+            internal Species(int dexID, string name, string formName, uint[] bs, (PokeType type1, PokeType type2) type, string[] ability, GenderRatio ratio, bool isHatchable = false)
             {
                 DexID = dexID;
                 Name = name;
@@ -31,12 +32,13 @@ namespace PokemonStandardLibrary.Gen3
                 Ability = ability;
                 Type = type;
                 GenderRatio = ratio;
+                IsHatchable = isHatchable;
             }
         }
         class AnotherForm : Species
         {
-            internal AnotherForm(int dexID, string name, string formName, uint[] bs, (PokeType type1, PokeType type2) type, string[] ability, GenderRatio ratio)
-                : base(dexID, name, formName, bs, type, ability, ratio) { }
+            internal AnotherForm(int dexID, string name, string formName, uint[] bs, (PokeType type1, PokeType type2) type, string[] ability, GenderRatio ratio, bool isHatchable = false)
+                : base(dexID, name, formName, bs, type, ability, ratio, isHatchable) { }
 
             public override string GetDefaultName() => $"{Name}#{Form}";
         }
