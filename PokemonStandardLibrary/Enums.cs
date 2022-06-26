@@ -134,6 +134,8 @@ namespace PokemonStandardLibrary.CommonExtension
             { (int)PokeType.Steel,    "はがね" },
             { (int)PokeType.Fairy,    "フェアリー" }
         };
+        private static readonly Dictionary<string, PokeType> jpToPokeType = PokeType_JP.ToDictionary(_ => _.Value, _ => (PokeType)_.Key);
+        private static readonly Dictionary<string, PokeType> kanjiToPokeType = PokeType_Kanji.ToDictionary(_ => _.Value, _ => (PokeType)_.Key);
 
         static private readonly string[] genderSymbol = { "♂", "♀", "-" };
         static private readonly string[] shinySymbol = { "-", "☆", "◇" };
@@ -173,5 +175,9 @@ namespace PokemonStandardLibrary.CommonExtension
 
             return Nature.other;
         }
+        public static PokeType JpnToPokeType(this string jpn)
+            => jpToPokeType[jpn];
+        public static PokeType KanjiToPokeType(this string kanji)
+            => kanjiToPokeType[kanji];
     }
 }
