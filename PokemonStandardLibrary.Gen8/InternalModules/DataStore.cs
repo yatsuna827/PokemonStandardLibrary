@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text.Json;
+using Newtonsoft.Json;
 
 namespace PokemonStandardLibrary.Gen8
 {
@@ -14,7 +14,7 @@ namespace PokemonStandardLibrary.Gen8
 
         public DataStore(string raw)
         {
-            _store = JsonSerializer.Deserialize<Dictionary<string, T>>(raw, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+            _store = JsonConvert.DeserializeObject<Dictionary<string, T>>(raw);
         }
     }
 }

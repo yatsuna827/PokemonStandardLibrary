@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using PokemonStandardLibrary.CommonExtension;
-using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 
 namespace PokemonStandardLibrary.Gen8
 {
@@ -52,12 +52,17 @@ namespace PokemonStandardLibrary.Gen8
 
     public class HoldingItem
     {
-        [JsonInclude]
-        public string Guaranteed { get; private set; }
-        [JsonInclude]
-        public string Common { get; private set; }
-        [JsonInclude]
-        public string Rare { get; private set; }
+        public string Guaranteed { get; }
+        public string Common { get; }
+        public string Rare { get; }
+
+        [JsonConstructor]
+        internal HoldingItem(string guaranteed = null, string common = null, string rare = null)
+        {
+            Guaranteed = guaranteed;
+            Common = common;
+            Rare = rare;
+        }
     }
 
 
