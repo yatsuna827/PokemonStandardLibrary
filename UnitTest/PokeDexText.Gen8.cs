@@ -215,7 +215,7 @@ namespace UnitTest.Gen8
         [TestMethod]
         public void Shadinja()
         {
-            Assert.AreEqual(1u, Pokemon.GetPokemon("ヌケニン").GetIndividual(100, new uint[] { 31, 31, 31, 31, 31, 31 }, 0, 0, 0, 0, 0).Stats[0]);
+            Assert.AreEqual(1u, Pokemon.GetPokemon("ヌケニン").GetIndividual(100, new uint[] { 31, 31, 31, 31, 31, 31 }, 0, 0, 0, 0, 0, 0, 0).Stats[0]);
         }
     }
 }

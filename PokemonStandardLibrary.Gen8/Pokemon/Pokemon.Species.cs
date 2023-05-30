@@ -24,8 +24,8 @@ namespace PokemonStandardLibrary.Gen8
 
             public virtual string GetDefaultName() => Name;
 
-            public Individual GetIndividual(uint lv, uint[] ivs, uint ec, uint pid, Nature nature, uint abilityIndex, Gender gender)
-                => new Individual(this, lv, ec, pid, nature, gender, abilityIndex, ivs);
+            public Individual GetIndividual(uint lv, uint[] ivs, uint ec, uint pid, Nature nature, uint abilityIndex, Gender gender, byte heightScale, byte weightScale)
+                => new Individual(this, lv, ec, pid, nature, gender, abilityIndex, ivs, heightScale, weightScale);
 
             internal Species(int dexID, int galarDexID, int armorDexID, int crownDexID, string name, string formName, uint[] bs, (PokeType type1, PokeType type2) type, string[] ability, GenderRatio ratio)
             {

@@ -22,10 +22,23 @@ namespace PokemonStandardLibrary.Gen8
             public IReadOnlyList<uint> Stats { get; }
             public ShinyType Shiny { get; private set; }
 
+            public byte HeightScale { get; }
+            public byte WeightScale { get; }
+
             public Individual SetShinyType(ShinyType value) { Shiny = value; return this; }
 
-            internal Individual(Species species, uint lv, uint ec, uint pid, Nature nature, Gender gender, uint abilityIndex, uint[] ivs)
-            {
+            internal Individual(
+                Species species, 
+                uint lv, 
+                uint ec, 
+                uint pid,
+                Nature nature,
+                Gender gender, 
+                uint abilityIndex,
+                uint[] ivs,
+                byte heightScale,
+                byte weightScale
+            ) {
                 Name = species.Name; 
                 Form = species.Form; 
                 Lv = lv; 
@@ -36,6 +49,8 @@ namespace PokemonStandardLibrary.Gen8
                 Ability = species.Ability[(int)abilityIndex]; 
                 IVs = ivs; 
                 Stats = GetStats(species.BS, ivs, nature, lv);
+                HeightScale = heightScale;
+                WeightScale = weightScale;
 
                 Species = species;
             }
